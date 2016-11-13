@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+  min-width: 250px;
+}
+
+/* Include the padding and border in an element's total width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #581845 ;
+  font-size: 18px;
+  transition: 0.2s;
+  
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: # #581845 ;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #C70039;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #888;
+  color: #ff0000;
+  text-decoration: line-through;
+
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Style the header */
+.header {
+  background-color: #f44336;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  border: none;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 65px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: top;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+ </style>
+</head>
+<body>
+
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">FINEZ</h2>
+  <input type="text" id="myInput" placeholder="Purchase Item">
+<body>
+
+<form>
+
+<div id="myDIV" class="header">
+  <h2 style="margin:15px">Total Balance </h2>
+  <input type='text' id='Resources'placeholder="Money in account">
+  <input type='text' id='Minutes'placeholder="Expense" onblur='Calculate();'/>
+  <input type='text' id='answer' name='ans'placeholder="Total Balance" />
+  <form name ="testarea" Method="Get" Action="youpage.html" id='form1'>
+
+
+</form>
+</body>
+<script>
+
+
+function Calculate()
+{
+  var resources = document.getElementById('Resources').value;
+  var minutes = document.getElementById('Minutes').value; 
+  var permin = parseFloat(resources) ;
+  document.getElementById('answer').value=parseFloat(permin) - parseFloat(minutes) ;
+  document.form1.submit();
+}
+</script>
+
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+
+<ul id="myUL">
+  
+</ul>
+<br>
+<head>
+<style>
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 20px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: red;
+}
+</style>
+</head>
+<body>
+
+<a href="https://www.youtube.com/watch?v=NiesEy9Fmag" target="https://www.youtube.com/watch?v=NiesEy9Fmag">Youtube</a>
+
+</body>
+<br>
+
+<style>
+a:link, a:visited {
+    background-color: #000080;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: blue;
+}
+</style>
+<a href="https://www.facebook.com/" target="_blank">Facebook</a>
+<br>
+
+<style>
+
+
+a:link, a:visited {
+    background-color: #000080;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: blue;
+}
+
+</style>
+
+
+<a href="https://www.instagram.com/" target="_blank">Instagram</a>
+<style>
+<br>
+a:link, a:visited {
+    background-color: #000080;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: blue;
+}
+
+</style>
+<br>
+<a href="https://www.google.com/" target="_blank">Google</a>
+<br>
+
+<script>
+
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+    
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+
+}
+
+</script>
+
+
+</body>
+<style>
+.dropbtn {
+    background-color: #800000;
+    color: white;
+    padding:56px;
+    font-size: 36px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 600px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #808080;
+}
+</style>
+</head>
+<body>
+
+<h2>Discounts</h2>
+<p>Who doesn't like a good discount</p>
+
+<div class="dropdown">
+  <button class="dropbtn">DISCOUNTS</button>
+  <div class="dropdown-content">
+    <a href="https://www.amazon.com/">Amazon</a>
+    <a href="https://www.groupon.com/">Groupon</a>
+    <a href="https://www.coupons.com/">Coupon.com</a>
+  </div>
+</div>
+
+</body>
+<style>
+body 
+{
+    background-image: url("http://www.1wallpaperhd.com/wp-content/uploads/Colorful/FTP1/2560x1440/Solid%20color%20wallpapers%2002%202560x1440.jpg");
+}
+</style> 
+
+
+</html>
